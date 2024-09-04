@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35201.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagementSystem", "ShopManagementSystem\ShopManagementSystem.csproj", "{7C34EF18-1C59-47D7-9307-CD5D5379FA08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagementSystem.Database", "ShopManagementSystem.Database\ShopManagementSystem.Database.csproj", "{11B33C7F-B44E-4993-B078-EF841B173753}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{1B7666C9-7197-4661-AC14-C07459015D34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C34EF18-1C59-47D7-9307-CD5D5379FA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C34EF18-1C59-47D7-9307-CD5D5379FA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C34EF18-1C59-47D7-9307-CD5D5379FA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C34EF18-1C59-47D7-9307-CD5D5379FA08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11B33C7F-B44E-4993-B078-EF841B173753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11B33C7F-B44E-4993-B078-EF841B173753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11B33C7F-B44E-4993-B078-EF841B173753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11B33C7F-B44E-4993-B078-EF841B173753}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A3ED279-D743-4F72-BBFB-F6C5C57EC38D}
+	EndGlobalSection
+EndGlobal
