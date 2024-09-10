@@ -56,6 +56,8 @@ The **Shop Management System API** is perfect for businesses that manage multipl
 
 ---
 
+![Alter](diagram.png)
+
 ### Database Setup
 
 To scaffold the database and set up your project, follow these steps:
