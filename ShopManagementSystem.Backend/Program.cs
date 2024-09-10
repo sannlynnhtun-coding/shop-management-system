@@ -8,6 +8,7 @@ builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<LocationRepository>();
 builder.Services.AddScoped<ShopRepository>();
 builder.Services.AddScoped<StaffRepository>();
+builder.Services.AddScoped<StaffShopLinkRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -27,5 +28,6 @@ app.UseHttpsRedirection();
 app.AddLocationEndpoint();
 app.AddShopEndpoint();
 app.AddStaffEndpoint();
+app.AddStaffShopLinkEndpoints();
 
 app.Run();
