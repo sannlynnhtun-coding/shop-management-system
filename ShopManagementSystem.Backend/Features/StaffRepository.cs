@@ -39,22 +39,22 @@ public class StaffRepository
     // Create a new staff
     public async Task CreateStaffAsync(Staff staff)
     {
-        var query = "INSERT INTO Staff (Name, HasGlobalAccess) VALUES (@Name, @HasGlobalAccess)";
+        var query = "INSERT INTO Staff (Name) VALUES (@Name)";
 
         using (var connection = _context.CreateConnection())
         {
-            await connection.ExecuteAsync(query, new { staff.Name, staff.HasGlobalAccess });
+            await connection.ExecuteAsync(query, new { staff.Name });
         }
     }
 
     // Update an existing staff
     public async Task UpdateStaffAsync(int id, Staff staff)
     {
-        var query = "UPDATE Staff SET Name = @Name, HasGlobalAccess = @HasGlobalAccess WHERE Id = @Id";
+        var query = "UPDATE Staff SET Name = @Name WHERE Id = @Id";
 
         using (var connection = _context.CreateConnection())
         {
-            await connection.ExecuteAsync(query, new { staff.Name, staff.HasGlobalAccess, Id = id });
+            await connection.ExecuteAsync(query, new { staff.Name, Id = id });
         }
     }
 

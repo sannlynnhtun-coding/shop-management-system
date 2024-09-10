@@ -6,29 +6,31 @@ public static class StaffEndpoints
 {
     public static void AddStaffEndpoint(this WebApplication app)
     {
+        var staffEndpoint = app.MapGroup("/staffs").WithTags("Staffs");
+
         // Get all staff
-        app.MapGet("/staff", async (StaffRepository repository) =>
+        staffEndpoint.MapGet("/", async (StaffRepository repository) =>
         {
             var staff = await repository.GetStaffAsync();
             return Results.Ok(staff);
         });
 
         // Get staff by Id
-        app.MapGet("/staff/{id}", async (int id, StaffRepository repository) =>
+        staffEndpoint.MapGet("/{id}", async (int id, StaffRepository repository) =>
         {
             var staff = await repository.GetStaffByIdAsync(id);
             return staff is not null ? Results.Ok(staff) : Results.NotFound();
         });
 
         // Create a new staff
-        app.MapPost("/staff", async (Staff staff, StaffRepository repository) =>
+        staffEndpoint.MapPost("/", async (Staff staff, StaffRepository repository) =>
         {
             await repository.CreateStaffAsync(staff);
-            return Results.Created($"/staff/{staff.Id}", staff);
+            return Results.Created($"/{staff.Id}", staff);
         });
 
         // Update an existing staff
-        app.MapPut("/staff/{id}", async (int id, Staff staff, StaffRepository repository) =>
+        staffEndpoint.MapPut("/{id}", async (int id, Staff staff, StaffRepository repository) =>
         {
             var existingStaff = await repository.GetStaffByIdAsync(id);
             if (existingStaff is null)
@@ -41,7 +43,7 @@ public static class StaffEndpoints
         });
 
         // Delete a staff
-        app.MapDelete("/staff/{id}", async (int id, StaffRepository repository) =>
+        staffEndpoint.MapDelete("/{id}", async (int id, StaffRepository repository) =>
         {
             var staff = await repository.GetStaffByIdAsync(id);
             if (staff is null)

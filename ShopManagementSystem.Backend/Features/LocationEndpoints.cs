@@ -6,29 +6,31 @@ namespace ShopManagementSystem.Backend.Features
     {
         public static void AddLocationEndpoint(this WebApplication app)
         {
+            var locationEndpoint = app.MapGroup("/locations").WithTags("Locations");
+
             // Get all locations
-            app.MapGet("/locations", async (LocationRepository repository) =>
+            locationEndpoint.MapGet("/", async (LocationRepository repository) =>
             {
                 var locations = await repository.GetLocationsAsync();
                 return Results.Ok(locations);
             });
 
             // Get location by Id
-            app.MapGet("/locations/{id}", async (int id, LocationRepository repository) =>
+            locationEndpoint.MapGet("/{id}", async (int id, LocationRepository repository) =>
             {
                 var location = await repository.GetLocationByIdAsync(id);
                 return location is not null ? Results.Ok(location) : Results.NotFound();
             });
 
             // Create a new location
-            app.MapPost("/locations", async (Location location, LocationRepository repository) =>
+            locationEndpoint.MapPost("/", async (Location location, LocationRepository repository) =>
             {
                 await repository.CreateLocationAsync(location);
-                return Results.Created($"/locations/{location.Id}", location);
+                return Results.Created($"/{location.Id}", location);
             });
 
             // Update a location
-            app.MapPut("/locations/{id}", async (int id, Location location, LocationRepository repository) =>
+            locationEndpoint.MapPut("/{id}", async (int id, Location location, LocationRepository repository) =>
             {
                 var existingLocation = await repository.GetLocationByIdAsync(id);
                 if (existingLocation is null)
@@ -41,7 +43,7 @@ namespace ShopManagementSystem.Backend.Features
             });
 
             // Delete a location
-            app.MapDelete("/locations/{id}", async (int id, LocationRepository repository) =>
+            locationEndpoint.MapDelete("/{id}", async (int id, LocationRepository repository) =>
             {
                 var location = await repository.GetLocationByIdAsync(id);
                 if (location is null)
