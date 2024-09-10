@@ -1,4 +1,5 @@
-﻿using ShopManagementSystem.Backend.Services;
+﻿using Dapper;
+using ShopManagementSystem.Backend.Services;
 using ShopManagementSystem.Database.Models;
 
 namespace ShopManagementSystem.Backend.Features;
