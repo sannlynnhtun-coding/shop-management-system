@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagementSystem.Backend", "ShopManagementSystem.Backend\ShopManagementSystem.Backend.csproj", "{93BCB4B9-615B-46F9-BF8A-AB2C80AF6F73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{11B33C7F-B44E-4993-B078-EF841B173753}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11B33C7F-B44E-4993-B078-EF841B173753}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11B33C7F-B44E-4993-B078-EF841B173753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93BCB4B9-615B-46F9-BF8A-AB2C80AF6F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93BCB4B9-615B-46F9-BF8A-AB2C80AF6F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93BCB4B9-615B-46F9-BF8A-AB2C80AF6F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93BCB4B9-615B-46F9-BF8A-AB2C80AF6F73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
